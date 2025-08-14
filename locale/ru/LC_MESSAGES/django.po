@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-13 00:24+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "Установка работала успешно! Поздравляю!"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Джанго документация"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Темы, ссылки и amp; Как-с"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Учебное пособие: приложение для опроса"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Начните с Джанго"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr "Джанго сообщество"
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Подключиться, получить помощь или внести свой вклад"
+
+#: .\env\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\env\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Индекс %(directory)s"
+
+#: .\templates\about.html:4 .\templates\base.html:52 .\templates\base.html:68
+#: .\templates\base.html:133
+msgid "Biz haqimizda"
+msgstr "о нас"
+
+#: .\templates\about.html:9
+msgid "Aura Group"
+msgstr "Aura Group"
+
+#: .\templates\about.html:15
+msgid "Aura Group haqida"
+msgstr "О группе ауры"
+
+#: .\templates\about.html:17
+msgid "'AURA Group' 2025-yil 1-iyunda tashkil etilgan. Kompaniya direktori Boborahim Rustamqulovning so‘zlariga ko‘ra, kompaniyaning maqsadi — O‘zbekistonning IT sohasida xalqaro standartlarga javob beradigan jamoani shakllantirish, yosh dasturchilarga o‘zlari ustida ishlash va shu bilan birga rasmiy ravishda ishga joylashish imkoniyatini yaratish, startaplarga asos solishdir. Kompaniya tashkil etilganiga ko‘p vaqt o‘tmasdan a’zolar soni ortib bormoqda. Bu insonlar kompaniya maqsadiga ishonib, loyihaning rivojlanishiga hissa qo‘shishga intilmoqdalar. Bugungi kunga qadar ular kompaniyaga sodiq qolgan holda, o‘z jamoalarini turli yo‘nalishlarda (Backend, Frontend, Mobile, Marketing Team va boshqalar) rivojlantirib kelmoqdalar."
+msgstr "«Aura Group» была основана 1 июня 2025 года. По словам директора компании Boborahim Rustamkulov, цель компании состоит в том, чтобы сформировать команду, которая соответствует международным стандартам в ИТ -индустрии, чтобы работать над собой для молодых программистов и в то же время официальной занятости. Не время компания увеличивает количество членов. Эти люди верят в цель компании и стремятся внести свой вклад в разработку проекта. На сегодняшний день они разрабатывают свои команды в различных областях (Backland, Frontship, Mobile, Marketing Team и т. Д.)."
+
+#: .\templates\about.html:25 .\templates\index.html:91
+msgid "Bizning jamoa"
+msgstr "Наша команда"
+
+#: .\templates\about.html:27
+msgid "Aura Group jamoasi turli sohalardan kelgan yuqori malakali mutaxassislar jamoasidir. Har bir jamoa a'zosi o'z sohasining yetakchi mutaxassisi bo'lib, har bir loyiha uchun keng qamrovli yechimlarni taqdim etadi. Biz doimo yangi iste'dodlarni qidirmoqda va jamoamizni doimiy ravishda kengaytirmoqdamiz."
+msgstr "Команда Aura Group - это команда высококвалифицированных специалистов из разных областей. Каждый член команды является ведущим специалистом по собственному сектору и предоставляет обширные решения для каждого проекта. Мы всегда ищем новые таланты и постоянно расширяем нашу команду."
+
+#: .\templates\about.html:34
+msgid "Jamoada intensiv ishlash"
+msgstr "Интенсивность в команде"
+
+#: .\templates\about.html:35
+msgid "Har bir loyiha ko'plab mutaxassislarning birgalikdagi ishi natijasidir."
+msgstr "Каждый проект является результатом совместной работы многих экспертов."
+
+#: .\templates\about.html:42
+msgid "Professional rivojlanish"
+msgstr "Профессиональное развитие"
+
+#: .\templates\about.html:43
+msgid "Bizning mutaxassislar doimiy ravishda bilim va ko'nikmalarini oshirib borishadi."
+msgstr "Наши специалисты регулярно увеличивают свои знания и навыки."
+
+#: .\templates\about.html:64
+msgid "Jamoa a'zolari"
+msgstr "Члены команды"
+
+#: .\templates\about.html:66
+msgid "Bizning professional jamoa kompaniyani yangi balandliklarga olib chiqish uchun doimo ish olib bormoqda."
+msgstr "Наша профессиональная команда постоянно работает над тем, чтобы привести компанию на новые высоты."
+
+#: .\templates\about.html:83
+msgid "Katta loyihalaringizni qurishga tayyormisiz?"
+msgstr "Готовы ли вы построить свои большие проекты?"
+
+#: .\templates\about.html:84
+msgid "Agar siz ham innovatsion yechimlar va professional xizmatlarni qadrlasangiz, biz bilan bog'laning."
+msgstr "Если вы цените инновационные решения и профессиональные услуги, свяжитесь с нами."
+
+#: .\templates\about.html:85 .\templates\base.html:56 .\templates\base.html:97
+#: .\templates\base.html:140 .\templates\contact.html:5
+msgid "Aloqa"
+msgstr "Контакт"
+
+#: .\templates\base.html:51 .\templates\base.html:67 .\templates\base.html:132
+#: .\templates\index.html:5
+msgid "Bosh sahifa"
+msgstr "Дом"
+
+#: .\templates\base.html:53 .\templates\base.html:69 .\templates\base.html:134
+#: .\templates\services.html:5
+msgid "Xizmatlar"
+msgstr "Услуги"
+
+#: .\templates\base.html:54 .\templates\base.html:70 .\templates\base.html:135
+#: .\templates\project.html:5
+msgid "Loyihalar"
+msgstr "Проекты"
+
+#: .\templates\base.html:55 .\templates\base.html:71 .\templates\base.html:136
+#: .\templates\blog.html:5
+msgid "Blog"
+msgstr "Блог"
+
+#: .\templates\base.html:113
+msgid "Biznesingizni rivojlantirish uchun ishonchli hamkor"
+msgstr "Надежный партнер для развития вашего бизнеса"
+
+#: .\templates\base.html:130
+msgid "Sahifalar"
+msgstr "Страницы"
+
+#: .\templates\base.html:144
+msgid "Navoi viloyati"
+msgstr "Регион Наву"
+
+#: .\templates\base.html:157
+msgid "Yangiliklarga obuna bo'lish"
+msgstr "Подпишитесь на новости"
+
+#: .\templates\base.html:158
+msgid "Yangiliklar va takliflarimizdan xabardor bo'ling"
+msgstr "Имейте в виду наши новости и предложения"
+
+#: .\templates\base.html:162
+msgid "Email manzilingiz"
+msgstr "Адрес электронной почты"
+
+#: .\templates\base.html:171
+msgid "Barcha huquqlar himoyalangan."
+msgstr "Все права защищены."
+
+#: .\templates\blog.html:9
+msgid "So'nggi maqolalar"
+msgstr "Последние статьи"
+
+#: .\templates\blog.html:10
+msgid "Kompaniyamizdan yangiliklar va foydali maslahatlar"
+msgstr "Новости и полезные советы от нашей компании"
+
+#: .\templates\blog.html:26
+msgid "Batafsil"
+msgstr "Подробный"
+
+#: .\templates\blog.html:31
+msgid "Maqolalar mavjud emas."
+msgstr "Статьи недоступны."
+
+#: .\templates\blog.html:39
+msgid "Oldingi"
+msgstr "Передний"
+
+#: .\templates\blog.html:51
+msgid "Keyingi"
+msgstr "Следующий"
+
+#: .\templates\blog_details.html:18
+msgid "Yuklangan:"
+msgstr "Загружено:"
+
+#: .\templates\blog_details.html:29
+msgid "Ochish"
+msgstr "Открыть"
+
+#: .\templates\blog_details.html:37
+msgid "Blog sahifasiga qaytish"
+msgstr "Вернуться на страницу блога"
+
+#: .\templates\contact.html:10 .\templates\index.html:31
+#: .\templates\index.html:114
+msgid "Biz bilan bog'laning"
+msgstr "Связаться с нами"
+
+#: .\templates\contact.html:12
+msgid "Agar sizda savollar yoki takliflar bo'lsa, quyidagi forma orqali bizga yozishingiz mumkin."
+msgstr "Если у вас есть какие -либо вопросы или предложения, вы можете написать нам через форму ниже."
+
+#: .\templates\contact.html:24 .\templates\index.html:124
+msgid "Manzil"
+msgstr "Адрес"
+
+#: .\templates\contact.html:25
+msgid "Toshkent shahar, Yunusobod tumani"
+msgstr "Ташкент -Сити, район Юнусабад"
+
+#: .\templates\contact.html:31 .\templates\index.html:131
+msgid "Telefon"
+msgstr "Телефон"
+
+#: .\templates\contact.html:38 .\templates\contact.html:72
+#: .\templates\index.html:138 .\templates\index.html:156
+msgid "Email"
+msgstr "Электронная почта"
+
+#: .\templates\contact.html:60 .\templates\index.html:148
+msgid "To'liq ism"
+msgstr "Полное имя"
+
+#: .\templates\contact.html:66 .\templates\index.html:152
+#: .\templates\services_request.html:43
+msgid "Telefon raqam"
+msgstr "Номер телефона"
+
+#: .\templates\contact.html:78 .\templates\index.html:160
+msgid "Xabar"
+msgstr "Сообщение"
+
+#: .\templates\contact.html:84 .\templates\index.html:164
+msgid "Tozalash"
+msgstr "Уборка"
+
+#: .\templates\contact.html:85 .\templates\index.html:165
+#: .\templates\service_request.html:24 .\templates\services_details.html:54
+#: .\templates\services_request.html:58
+msgid "Yuborish"
+msgstr "Отправка"
+
+#: .\templates\index.html:13
+msgid "Sizning brauzeringiz video formatini qo'llab-quvvatlamaydi."
+msgstr "Ваш браузер не поддерживает видеоформат."
+
+#: .\templates\index.html:17
+msgid "Boshlash"
+msgstr "Начинать"
+
+#: .\templates\index.html:25
+msgid "AURA Groupning rasmiy veb-saytiga xush kelibsiz! Biz sizga raqamli yechimlarni taklif qilamiz"
+msgstr "Добро пожаловать на официальный сайт Aura Group! Мы предлагаем вам цифровые решения"
+
+#: .\templates\index.html:28
+msgid "AURA Group – Aqlli Yechimlar. Haqiqiy Natijalar."
+msgstr "AURA Group - Умные Решения. Истинные Результаты."
+
+#: .\templates\index.html:32
+msgid "Xizmatlar bilan tanishish"
+msgstr "Встреча за услуги"
+
+#: .\templates\index.html:43
+msgid "Nega aynan biz?"
+msgstr "Почему мы?"
+
+#: .\templates\index.html:47
+msgid "Innovatsion yechimlar"
+msgstr "Инновационные решения"
+
+#: .\templates\index.html:48
+msgid "Har bir loyiha uchun zamonaviy va samarali texnologik yondashuv. Fikrlar — amaliyotga, natijalar — muvaffaqiyatga aylanishi uchun ishlaymiz."
+msgstr "Современный и эффективный технологический подход для каждого проекта. Мысли - мы работаем на практику, результаты - чтобы добиться успеха."
+
+#: .\templates\index.html:52
+msgid "Professional jamoa"
+msgstr "Команда"
+
+#: .\templates\index.html:53
+msgid "Bizda hamma bir-birini tushunadi. Dasturchilar, dizaynerlar, marketologlar — har kim o‘z ishining ustasi. Hammasi bir maqsad yo‘lida, yagona jamoa bo‘lib harakat qiladi. Fikr almashamiz, yordam beramiz, ba’zida bahslashamiz ham. Ammo oxirida hamma narsa bitta maqsadga xizmat qiladi — startaplar yaratish va odamlarning muammolariga real yechim topish."
+msgstr "Мы понимаем друг друга. Программисты, дизайнеры, рынки - каждый - мастер его собственной работы. Каждый работает как единственная команда в стремлении к цели. Мы обменяемся, поможем, иногда спорят. Но, в конце концов, все служит одной цели - создание стартапов и находит реальное решение для проблем людей."
+
+#: .\templates\index.html:57
+msgid "Sifat va Natija"
+msgstr "Качество и результат"
+
+#: .\templates\index.html:58
+msgid "Har bir loyiha mukammal bajariladi. Biz uchun eng muhim narsa — sifat va mijozning roziligi."
+msgstr "Каждый проект выполняется идеально. Самое важное для нас - это качество и согласие клиента."
+
+#: .\templates\index.html:66
+msgid "Xizmatlar rasmi"
+msgstr "Картина услуг"
+
+#: .\templates\index.html:70
+msgid "Bizning xizmatlar"
+msgstr "Наши услуги"
+
+#: .\templates\index.html:72
+msgid "Biz turli sohalar uchun mos yechimlar taklif qilamiz. Har bir mijoz individual yondashuv va eng optimal yechimlarni oladi."
+msgstr "Мы предлагаем соответствующие решения для разных областей. Каждый клиент получает индивидуальный подход и самые оптимальные решения."
+
+#: .\templates\index.html:84
+msgid "Barcha xizmatlar"
+msgstr "Все услуги"
+
+#: .\templates\index.html:92
+msgid "Ko'p yillik tajribaga ega professional jamoamiz"
+msgstr "Наша профессиональная команда с многолетним опытом"
+
+#: .\templates\index.html:97
+msgid "Jamoa a'zosi"
+msgstr "Команда"
+
+#: .\templates\index.html:107
+msgid "Ko‘proq"
+msgstr "Более"
+
+#: .\templates\index.html:125
+msgid "Navoi shahar"
+msgstr "Город Наву"
+
+#: .\templates\project.html:9
+msgid "Bizning loyihalarimiz"
+msgstr "Наши проекты"
+
+#: .\templates\project.html:10
+msgid "Yaqinda ishga tushirilgan loyihalar"
+msgstr "Недавно запустил проекты"
+
+#: .\templates\project.html:15
+msgid "Barchasi"
+msgstr "Все"
+
+#: .\templates\project.html:41
+msgid "Hech qanday loyiha mavjud emas."
+msgstr "Проект не доступен."
+
+#: .\templates\project_details.html:14
+msgid "Loyihani ochish"
+msgstr "Откройте проект"
+
+#: .\templates\project_details.html:33
+msgid "rasmi"
+msgstr "картина"
+
+#: .\templates\project_details.html:67
+msgid "Tavsifi"
+msgstr "Описание"
+
+#: .\templates\project_details.html:71
+msgid "Texnologiyalar"
+msgstr "Технология"
+
+#: .\templates\project_details.html:79
+msgid "Orqaga"
+msgstr "Назад"
+
+#: .\templates\service_request.html:6 .\templates\services_details.html:9
+#: .\templates\services_request.html:4 .\templates\services_request.html:9
+msgid "Xizmat so‘rovi"
+msgstr "Запрос на обслуживание"
+
+#: .\templates\service_request.html:10
+msgid "Xizmat so‘rovi yuborish"
+msgstr "Отправить запрос на обслуживание"
+
+#: .\templates\services.html:10
+msgid "Bizning xizmatlarimiz"
+msgstr "Наши услуги"
+
+#: .\templates\services.html:11
+msgid "Aura Group taqdim etadigan xizmatlar bilan tanishing."
+msgstr "Познакомьтесь с услугами, которые предоставляют Aura Group."
+
+#: .\templates\services_details.html:5
+msgid "Xizmat so'rovi"
+msgstr "Запрос на обслуживание"
+
+#: .\templates\services_details.html:13
+msgid "Xizmat haqida to‘liq ma'lumotni kiriting, biz siz bilan aloqaga chiqamiz."
+msgstr "Введите полную информацию о службе, мы свяжемся с вами."
+
+#: .\templates\services_request.html:15
+msgid "Quyidagi forma bilan kompaniyangiz, xizmat turi va loyiha haqida maʼlumot bering. Tez orada o'zimiz bog‘lanamiz."
+msgstr "Дайте информацию о вашей компании, обслуживании и проекте с формой ниже. Мы скоро свяжемся с нами."
+
+#: .\templates\services_request.html:35
+#: forms.py:8
+msgid "Kompaniya nomi"
+msgstr "Название компании"
+
+#: .\templates\services_request.html:38
+#: forms.py:11
+msgid "Ismingiz"
+msgstr "Ваше имя"
+
+#: .\templates\services_request.html:46
+#: forms.py:10
+msgid "Xizmat turi"
+msgstr "Вид услуги"
+
+#: .\templates\services_request.html:52
+#: forms.py:12
+msgid "Loyiha tavsifi"
+msgstr "Описание проекта"
+
+#: forms.py:9
+msgid "Telefon raqami"
+msgstr "Номер телефона"
+
+#: forms.py:11
+msgid "Ism"
+msgstr "Имя"
+
+#: forms.py:12
+msgid "Tavsif"
+msgstr "Описание"
+
+#: forms.py:16
+msgid "Kompaniya nomini kiriting"
+msgstr "Введите название компании"
+
+#: forms.py:24
+msgid "Ismingizni kiriting"
+msgstr "Введите ваше имя"
+
+#: forms.py:28
+msgid "Loyihangizni tavsiflang..."
+msgstr "Опишите ваш проект..."
+
+#: .\templates\project.html:17
+msgid "Mobile app"
+msgstr "Мобильное приложение"
+
+#: .\templates\project.html:18
+msgid "CRM"
+msgstr "CRM"
+
+#: .\templates\project.html:19
+msgid "Web site"
+msgstr "Веб-сайт"
+
+#: .\templates\project.html:20
+msgid "Telegram bot"
+msgstr "Телеграм-бот"

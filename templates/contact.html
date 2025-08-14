@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Aloqa" %}{% endblock %}
+
+{% block content %}
+<div class="px-4 py-12">
+    <div class="flex flex-col items-center text-white text-center max-w-2xl mx-auto">
+        <h1 class="text-3xl font-semibold">{% trans "Biz bilan bog'laning" %}</h1>
+        <p class="mt-6 text-gray-300">
+            {% trans "Agar sizda savollar yoki takliflar bo'lsa, quyidagi forma orqali bizga yozishingiz mumkin." %}
+        </p>
+    </div>
+
+    <div class="mt-12 flex flex-col md:flex-row items-center md:items-start justify-center gap-8 p-6 rounded-xl bg-[#12192C] w-full max-w-7xl mx-auto"
+        style="background-image: url('{% static 'imgs/background.png' %}'); background-repeat: no-repeat; background-size: 400px; background-position: left top;">
+
+        <div class="bg-gray-600 opacity-85 p-[60px] rounded-2xl border border-[#5389D6] w-[360px] md:w-[400px] h-[400px]">
+            <ul class="space-y-2">
+                <li class="flex items-start h-[100px] gap-6">
+                    <i class="fas fa-map-marker-alt text-[#081331] mr-3 mt-1 p-3 rounded-full bg-white w-9 h-9 flex items-center"></i>
+                    <span class="text-gray-300">
+                        <h3>{% trans "Manzil" %}</h3>
+                        <p>{% trans "Toshkent shahar, Yunusobod tumani" %}</p>
+                    </span>
+                </li>
+                <li class="flex items-start h-[100px] gap-6">
+                    <i class="fas fa-phone-alt text-[#081331] mr-3 mt-1 p-3 rounded-full bg-white w-9 h-9 flex items-center"></i>
+                    <span class="text-gray-300">
+                        <h3>{% trans "Telefon" %}</h3>
+                        <p>+998 99 123 45 67</p>
+                    </span>
+                </li>
+                <li class="flex items-start h-[100px] gap-6">
+                    <i class="fas fa-envelope text-[#081331] mr-3 mt-1 p-3 rounded-full bg-white w-9 h-9 flex items-center"></i>
+                    <span class="text-gray-300">
+                        <h3>{% trans "Email" %}</h3>
+                        <p>info@auragroup.uz</p>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-full max-w-2xl text-gray-200">
+            <form class="space-y-4" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+
+                {% if messages %}
+                    <div class="mb-4">
+                        {% for message in messages %}
+                            <div class="p-4 bg-green-100 text-green-700 rounded-lg">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {{ form.non_field_errors }}
+
+                <div class="flex flex-col">
+                    <label for="{{ form.full_name.id_for_label }}">{% trans "To'liq ism" %}</label>
+                    {{ form.full_name }}
+                    {{ form.full_name.errors }}
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="{{ form.phone_number.id_for_label }}">{% trans "Telefon raqam" %}</label>
+                    {{ form.phone_number }}
+                    {{ form.phone_number.errors }}
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="{{ form.email.id_for_label }}">{% trans "Email" %}</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="{{ form.message.id_for_label }}">{% trans "Xabar" %}</label>
+                    {{ form.message }}
+                    {{ form.message.errors }}
+                </div>
+
+                <div class="flex justify-end gap-4 mt-4">
+                    <button type="reset" class="border border-[#1479C1] py-2 px-6 text-[#1479C1] rounded-lg">{% trans "Tozalash" %}</button>
+                    <button type="submit" class="bg-[#1479C1] py-2 px-6 text-white rounded-lg hover:bg-[#0f5e95] transition">{% trans "Yuborish" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Biz haqimizda" %}{% endblock %}
+
+{% block content %}
+<div class="h-[200px]" style="background-image: url('{% static 'imgs/aboutImg.png' %}'); background-repeat: no-repeat; background-size:cover; background-position: left top;">
+    <span class="flex flex-col items-center text-white">
+        <h1 class="text-4xl mt-[80px] font-semibold">{% trans "Aura Group" %}</h1>
+        <p class="mt-3"></p>
+    </span>
+</div>
+
+<div class="flex flex-col items-center text-white mt-6">
+    <h1 class="text-3xl font-semibold">{% trans "Aura Group haqida" %}</h1>
+    <p class="w-[380px] md:w-[680px] text-center mt-3">
+        {% trans "'AURA Group' 2025-yil 1-iyunda tashkil etilgan. Kompaniya direktori Boborahim Rustamqulovning so‘zlariga ko‘ra, kompaniyaning maqsadi — O‘zbekistonning IT sohasida xalqaro standartlarga javob beradigan jamoani shakllantirish, yosh dasturchilarga o‘zlari ustida ishlash va shu bilan birga rasmiy ravishda ishga joylashish imkoniyatini yaratish, startaplarga asos solishdir. Kompaniya tashkil etilganiga ko‘p vaqt o‘tmasdan a’zolar soni ortib bormoqda. Bu insonlar kompaniya maqsadiga ishonib, loyihaning rivojlanishiga hissa qo‘shishga intilmoqdalar. Bugungi kunga qadar ular kompaniyaga sodiq qolgan holda, o‘z jamoalarini turli yo‘nalishlarda (Backend, Frontend, Mobile, Marketing Team va boshqalar) rivojlantirib kelmoqdalar." %}
+    </p>
+</div>
+
+<div class="flex flex-col md:flex-row items-center justify-around flex-wrap px-4 md:px-0">
+    <img src="{% static 'imgs/about.png' %}" alt="" width="400" height="300" class="w-full md:w-[400px] h-auto object-contain">
+
+    <div class="text-white p-4 md:p-4 mt-6 md:mt-0">
+        <h1 class="text-xl md:text-3xl font-semibold">{% trans "Bizning jamoa" %}</h1>
+        <p class="w-full md:w-[520px] mt-2 text-sm md:text-base">
+            {% trans "Aura Group jamoasi turli sohalardan kelgan yuqori malakali mutaxassislar jamoasidir. Har bir jamoa a'zosi o'z sohasining yetakchi mutaxassisi bo'lib, har bir loyiha uchun keng qamrovli yechimlarni taqdim etadi. Biz doimo yangi iste'dodlarni qidirmoqda va jamoamizni doimiy ravishda kengaytirmoqdamiz." %}
+        </p>
+
+        <div class="mt-4">
+            <div class="flex items-start gap-3">
+                <img src="{% static 'imgs/aboutIcons.png' %}" alt="" class="p-2 rounded-full bg-[#1479C1] w-10 h-10 object-contain">
+                <span class="flex flex-col text-sm">
+                    <h3 class="font-semibold text-base md:text-lg">{% trans "Jamoada intensiv ishlash" %}</h3>
+                    <p>{% trans "Har bir loyiha ko'plab mutaxassislarning birgalikdagi ishi natijasidir." %}</p>
+                </span>
+            </div>
+
+            <div class="flex items-start gap-3 mt-6">
+                <img src="{% static 'imgs/aboutIcons2.png' %}" alt="" class="p-2 rounded-full bg-[#1479C1] w-10 h-10 object-contain">
+                <span class="flex flex-col text-sm">
+                    <h3 class="font-semibold text-base md:text-lg">{% trans "Professional rivojlanish" %}</h3>
+                    <p>{% trans "Bizning mutaxassislar doimiy ravishda bilim va ko'nikmalarini oshirib borishadi." %}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-8">
+    {% for principle in principles %}
+    <div class="border p-6 rounded-lg bg-[#081331] flex flex-col items-center text-center w-full max-w-xs">
+        <div class="bg-[#1479C1] p-4 rounded-full">
+            <img src="{{ principle.icon.url }}" alt="{{ principle.title }} ikonkasi" class="w-10 h-10" />
+        </div>
+        <h5 class="text-xl mt-4">{{ principle.title }}</h5>
+        <p class="mt-2 text-sm">{{ principle.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="text-white">
+    <span class="flex flex-col items-center mt-10">
+        <h1 class="text-2xl md:text-3xl font-semibold">{% trans "Jamoa a'zolari" %}</h1>
+        <p class="mt-3 text-center w-[280px] md:w-full text-sm md:text-lg">
+            {% trans "Bizning professional jamoa kompaniyani yangi balandliklarga olib chiqish uchun doimo ish olib bormoqda." %}
+        </p>
+    </span>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-[170px] mt-10 text-sm">
+        {% for leader in management %}
+        <div class="border border-[#081331] rounded-lg bg-[#081331] flex flex-col items-start">
+            <img src="{{ leader.image.url }}" alt="{{ leader.name }}" class="w-full md:w-[500px] h-64 object-cover">
+            <h5 class="text-xl mt-3 px-4">{{ leader.name }}</h5>
+            <p class="text-[#6ADAFC] mt-3 px-4">{{ leader.position }}</p>
+            <p class="w-[300px] mt-3 px-4 py-3">{{ leader.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="bg-[#001D31] mt-8 flex items-center flex-col text-white p-10">
+    <h2 class="text-3xl">{% trans "Katta loyihalaringizni qurishga tayyormisiz?" %}</h2>
+    <p class="mt-6">{% trans "Agar siz ham innovatsion yechimlar va professional xizmatlarni qadrlasangiz, biz bilan bog'laning." %}</p>
+    <a href="{% url 'contact' %}" class="px-8 py-2 border border-[#1479C1] rounded-lg bg-[#1479C1] mt-6">{% trans "Aloqa" %}</a>
+</div>
+{% endblock %}

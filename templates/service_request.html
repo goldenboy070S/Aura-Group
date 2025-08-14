@@ -1,0 +1,28 @@
+{% load i18n %}
+{# templates/services/service_request.html #}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% trans "Xizmat so‘rovi" %}{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-8">
+  <h1 class="text-2xl font-bold mb-4">{% trans "Xizmat so‘rovi yuborish" %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="space-y-4">
+      {% for field in form %}
+        <div>
+          {{ field.label_tag }}<br>
+          {{ field }}
+          {{ field.errors }}
+        </div>
+      {% endfor %}
+    </div>
+    <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">
+      {% trans "Yuborish" %}
+    </button>
+  </form>
+</div>
+{% endblock %}

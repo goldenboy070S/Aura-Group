@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ post.name }}{% endblock %}
+
+{% block content %}
+<section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="bg-[#0A1132] rounded-xl shadow-lg overflow-hidden">
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.name }}" class="w-full h-56 object-cover rounded-t-xl">
+        {% else %}
+        <img src="{% static 'imgs/no-image.jpg' %}" alt="No image" class="w-full h-56 object-cover rounded-t-xl">
+        {% endif %}
+
+        <div class="p-6">
+            <p class="text-sm text-gray-400 mb-3">
+                {% trans "Yuklangan:" %} <span class="font-medium">{{ post.created_at|date:"d.m.Y" }}</span>
+            </p>
+
+            <h2 class="text-2xl font-bold text-white mb-4 truncate">{{ post.name }}</h2>
+
+            <div class="text-gray-200 mb-6 leading-relaxed">
+                <p class="blog-desc">{{ post.description|safe }}</p>
+            </div>
+
+            <!-- <div class="mb-6">
+                <a href="{{ post.blog_link }}" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-[#1479C1] text-white rounded-lg hover:bg-blue-500 transition">
+                    {% trans "Ochish" %}
+                </a>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="mt-8 text-center">
+        <a href="{% url 'blog' %}" class="inline-block px-5 py-2 border border-[#1479C1] text-[#1479C1] rounded-lg hover:bg-[#1479C1] hover:text-white transition">
+            ← {% trans "Blog sahifasiga qaytish" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

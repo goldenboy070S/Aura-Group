@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Blog" %}{% endblock %}
+
+{% block content %}
+<section class="text-white py-10 px-4 max-w-7xl mx-auto">
+    <h2 class="text-center text-3xl font-bold mb-6">{% trans "So'nggi maqolalar" %}</h2>
+    <p class="text-center text-lg mb-10">{% trans "Kompaniyamizdan yangiliklar va foydali maslahatlar" %}</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="blogGrid">
+        {% for post in blog_posts %}
+        <div class="blog-card bg-[#0A1132] rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+            {% if post.image %}
+            <a href="{% url 'blog_detail' post.id %}">
+                <img src="{{ post.image.url }}" alt="{{ post.name }}" class="w-full h-[180px] object-cover">
+            </a>
+            {% else %}
+            <img src="{% static 'imgs/no-image.jpg' %}" alt="No image" class="w-full h-[180px] object-cover">
+            {% endif %}
+            <div class="p-4">
+                <h2 class="text-xl font-semibold mb-2 truncate">{{ post.name }}</h2>
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">{{ post.created_at|date:"d.m.Y" }}</span>
+                    <a href="{% url 'blog_detail' post.id %}" class="text-[#1479C1] hover:text-blue-400 transition underline">{% trans "Batafsil" %}</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-gray-400 col-span-3">{% trans "Maqolalar mavjud emas." %}</p>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+    <div class="flex justify-center mt-10">
+        <div class="flex space-x-2">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="px-3 py-1 border border-[#1479C1] text-[#1479C1] rounded hover:bg-[#1479C1] hover:text-white transition">{% trans "Oldingi" %}</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a href="?page={{ num }}" class="px-3 py-1 bg-[#1479C1] text-white rounded">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a href="?page={{ num }}" class="px-3 py-1 border border-[#1479C1] text-[#1479C1] rounded hover:bg-[#1479C1] hover:text-white transition">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="px-3 py-1 border border-[#1479C1] text-[#1479C1] rounded hover:bg-[#1479C1] hover:text-white transition">{% trans "Keyingi" %}</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block content %}
+<section class="py-8 px-4 max-w-4xl mx-auto bg-gray-900 text-white rounded-lg shadow-md">
+
+    {% if project.proect_link %}
+        <div class="text-center mb-4">
+            <a href="{{ project.proect_link }}"
+               class="inline-block px-6 py-2 text-base font-semibold text-white bg-[#1479C1] rounded-full hover:bg-[#1a91e0] transition-all duration-300">
+                {% trans "Loyihani ochish" %}
+            </a>
+        </div>
+    {% endif %}
+
+    <h2 class="text-2xl font-bold text-center text-white mb-4">{{ project.proect_type }}</h2>
+
+    {% if project.image or project.images.exists %}
+        <div class="rounded-lg overflow-hidden mb-4">
+            <div class="swiper w-full h-[250px] md:h-[350px]">
+                <div class="swiper-wrapper">
+                    {% if project.image %}
+                        <div class="swiper-slide">
+                            <img src="{{ project.image.url }}" alt="{{ project.name }}"
+                                 class="w-full h-full object-cover">
+                        </div>
+                    {% endif %}
+                    {% for image in project.images.all %}
+                        <div class="swiper-slide">
+                            <img src="{{ image.image.url }}" alt="{{ project.name }} {% trans "rasmi" %}"
+                                 class="w-full h-full object-cover">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="flex justify-center gap-4 mb-4">
+        <div class="bg-gray-800 p-3 rounded-lg flex items-center gap-2">
+            <i class="fas fa-eye text-[#1479C1]"></i>
+            <p class="text-base font-semibold text-[#1479C1]">{{ project.view_count }}</p>
+        </div>
+
+        {% with key="liked_project_"|add:project.id|stringformat:"s" %}
+        <form method="post" action="{% url 'like_project' project.id %}">
+            {% csrf_token %}
+            <button type="submit" 
+                    class="bg-gray-800 p-3 rounded-lg flex items-center gap-2 border-none outline-none cursor-pointer">
+                
+                <i class="{% if key in request.session %}fas{% else %}far{% endif %} fa-thumbs-up text-pink-500"></i>
+                <p class="text-base font-semibold text-pink-500">{{ project.like_count }}</p>
+            </button>
+        </form>
+        {% endwith %}
+    </div>
+
+    <!-- Loyiha ma'lumotlari -->
+    <div class="space-y-3 text-sm text-gray-200">
+        <div>
+            <h3 class="text-base font-semibold text-white">{% trans "Tavsifi" %}:</h3>
+            <p>{{ project.description|safe }}</p>
+        </div>
+        <div>
+            <h3 class="text-base font-semibold text-white">{% trans "Texnologiyalar" %}:</h3>
+            <p>{{ project.tehnalogiyalari }}</p>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a href="{% url 'project' %}"
+           class="inline-block px-6 py-2 text-base font-semibold text-[#1479C1] border border-[#1479C1] rounded-full hover:bg-[#1479C1] hover:text-white transition-all duration-300">
+            ← {% trans "Orqaga" %}
+        </a>
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            loop: {% if project.image or project.images.count > 1 %}true{% else %}false{% endif %},
+            autoplay: { delay: 4000, pauseOnMouseEnter: true },
+            speed: 600,
+        });
+    });
+
+    function likeProject(projectId) {
+        fetch(`/projects/${projectId}/like/`, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': getCookie('csrftoken'),
+            },
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Server error');
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById(`like-count-${projectId}`).textContent = data.like_count;
+            const likeIcon = document.getElementById(`like-icon-${projectId}`);
+            likeIcon.classList.remove(data.liked ? 'far' : 'fas');
+            likeIcon.classList.add(data.liked ? 'fas' : 'far');
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .swiper-slide img { object-fit: cover; width: 100%; height: 100%; }
+    .swiper-button-prev, .swiper-button-next {
+        color: #1479C1; background: rgba(0, 0, 0, 0.4); border-radius: 50%; width: 36px; height: 36px;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after { font-size: 16px; }
+    .swiper-pagination-bullet { background: #ffffff; opacity: 0.5; }
+    .swiper-pagination-bullet-active { background: #1479C1; opacity: 1; }
+</style>
+{% endblock %}

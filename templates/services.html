@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block title %}{% trans "Xizmatlar" %}{% endblock %}
+
+{% block content %}
+<section class="flex flex-col items-center text-white text-center">
+    <div class="">
+        <h2 class="text-3xl font-semibold mt-12">{% trans "Bizning xizmatlarimiz" %}</h2>
+        <p class="mt-8">{% trans "Aura Group taqdim etadigan xizmatlar bilan tanishing." %}</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6 text-lg mt-6">
+        {% for service in services|slice:":3" %}
+        <div class="w-[390px] bg-[#0A1132] hover:bg-[#0A1140] p-3 rounded-lg">
+            <a href="{% url 'services_details' service.pk %}">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}" class="mx-auto h-40 object-contain">
+            </a>
+            <h3 class="mt-2">
+                <a href="{% url 'services_details' service.pk %}" class="hover:text-[#1479C1]">{{ service.name }}</a>
+            </h3>
+            <p class="text-sm mt-2">{{ service.description|truncatewords:15 }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6 text-lg mt-6">
+        {% for service in services|slice:"3:6" %}
+        <div class="w-[390px] bg-[#0A1132] hover:bg-[#0A1140] p-3 rounded-lg">
+            <a href="{% url 'service_detail' service.id %}">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}" class="mx-auto h-40 object-contain">
+            </a>
+            <h3 class="mt-2">
+                <a href="{% url 'service_detail' service.id %}" class="hover:text-[#1479C1]">{{ service.name }}</a>
+            </h3>
+            <p class="text-sm mt-2">{{ service.description|truncatewords:15 }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% load i18n %}
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE|default:'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Group - {% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-[#09101E]">
+    <!-- Navbar qismi -->
+    <div class="p-2">
+        <!-- Mobil versiya -->
+        <div class="flex md:hidden items-center justify-around">
+            <button onclick="toggleMenu()" class="text-white text-2xl">
+                ☰
+            </button>
+            <a href="{% url 'index' %}" class="flex items-center gap-2">
+                <img src="{% static 'imgs/logo.png' %}" alt="Logo" width="100">
+            </a>
+            <div class="relative">
+                <button onclick="toggleDropdown('mobile')" class="flex items-center gap-2 px-2 py-1 text-white">
+                    {% get_current_language as lang %}
+                    <img id="mobile-language-img" src="{% if lang == 'en' %}{% static 'imgs/eng.jpg' %}{% elif lang == 'ru' %}{% static 'imgs/russia.jpg' %}{% elif lang == 'uz' %}{% static 'imgs/uzb.jpg' %}{% else %}{% static 'imgs/eng.jpg' %}{% endif %}" alt="{{ lang|default:'en' }}" class="w-5 h-5 rounded-full">
+                    <span id="mobile-selected-language">{{ lang|upper|default:'ENG' }}</span>
+                </button>
+                <div id="mobile-languageDropdown" class="hidden absolute right-0 z-10 mt-2 w-40 bg-white border border-gray-300 rounded shadow">
+                    <form action="{% url 'set_language' %}" method="post" id="mobile-language-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path|default:'/' }}">
+                        <button type="submit" name="language" value="en" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                            <img src="{% static 'imgs/eng.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Eng</span>
+                        </button>
+                        <button type="submit" name="language" value="ru" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                            <img src="{% static 'imgs/russia.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Rus</span>
+                        </button>
+                        <button type="submit" name="language" value="uz" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                            <img src="{% static 'imgs/uzb.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Uzb</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden mt-4">
+            <ul class="flex flex-col gap-4 font-semibold text-white">
+                <li><a href="{% url 'index' %}" class="hover:text-[#1479C1]">{% trans "Bosh sahifa" %}</a></li>
+                <li><a href="{% url 'about' %}" class="hover:text-[#1479C1]">{% trans "Biz haqimizda" %}</a></li>
+                <li><a href="{% url 'services' %}" class="hover:text-[#1479C1]">{% trans "Xizmatlar" %}</a></li>
+                <li><a href="{% url 'project' %}" class="hover:text-[#1479C1]">{% trans "Loyihalar" %}</a></li>
+                <li><a href="{% url 'blog' %}" class="hover:text-[#1479C1]">{% trans "Blog" %}</a></li>
+                <li><a href="{% url 'contact' %}" class="hover:text-[#1479C1]">{% trans "Aloqa" %}</a></li>
+            </ul>
+        </div>
+
+        <!-- Desktop versiya -->
+        <div class="hidden md:flex items-center justify-around">
+            <a href="{% url 'index' %}" class="flex items-center gap-2">
+                <img src="{% static 'imgs/logo.png' %}" alt="Logo" width="100">
+            </a>
+            <nav>
+                <ul class="flex flex-row items-center gap-6 font-semibold">
+                    <li class="text-white hover:text-[#1479C1]"><a href="{% url 'index' %}">{% trans "Bosh sahifa" %}</a></li>
+                    <li class="text-white hover:text-[#1479C1]"><a href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a></li>
+                    <li class="text-white hover:text-[#1479C1]"><a href="{% url 'services' %}">{% trans "Xizmatlar" %}</a></li>
+                    <li class="text-white hover:text-[#1479C1]"><a href="{% url 'project' %}">{% trans "Loyihalar" %}</a></li>
+                    <li class="text-white hover:text-[#1479C1]"><a href="{% url 'blog' %}">{% trans "Blog" %}</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-4 text-white">
+                <div class="relative">
+                    <button onclick="toggleDropdown('desktop')" class="flex items-center gap-2 px-2 py-1 text-white">
+                        {% get_current_language as lang %}
+                        <img id="desktop-language-img" src="{% if lang == 'en' %}{% static 'imgs/eng.jpg' %}{% elif lang == 'ru' %}{% static 'imgs/russia.jpg' %}{% elif lang == 'uz' %}{% static 'imgs/uzb.jpg' %}{% else %}{% static 'imgs/eng.jpg' %}{% endif %}" alt="{{ lang|default:'en' }}" class="w-5 h-5 rounded-full">
+                        <span id="desktop-selected-language">{{ lang|upper|default:'ENG' }}</span>
+                    </button>
+                    <div id="desktop-languageDropdown" class="hidden absolute right-0 z-10 mt-2 w-40 bg-white border border-gray-300 rounded shadow">
+                        <form action="{% url 'set_language' %}" method="post" id="desktop-language-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.get_full_path|default:'/' }}">
+                            <button type="submit" name="language" value="en" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                <img src="{% static 'imgs/eng.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Eng</span>
+                            </button>
+                            <button type="submit" name="language" value="ru" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                <img src="{% static 'imgs/russia.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Rus</span>
+                            </button>
+                            <button type="submit" name="language" value="uz" class="w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                <img src="{% static 'imgs/uzb.jpg' %}" class="w-5 h-5 rounded-full"> <span class="text-black">Uzb</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <a href="{% url 'contact' %}" class="bg-[#1479C1] rounded-lg px-4 py-2">{% trans "Aloqa" %}</a>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer qismi -->
+    <footer class="px-8 md:px-10 lg:px-20 xl:px-32 flex items-center justify-between md:justify-around relative mt-10">
+        <div class="mx-auto text-white">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="mb-6 md:mb-0 hidden md:block px-2">
+                    <a href="{% url 'index' %}" class="flex items-center gap-2">
+                        <img src="{% static 'imgs/logo.png' %}" alt="Logo" width="100">
+                    </a>
+                    <p class="text-gray-300 mb-4 text-sm mt-3">{% trans "Biznesingizni rivojlantirish uchun ishonchli hamkor" %}</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="px-2">
+                    <h4 class="text-lg font-semibold mb-4">{% trans "Sahifalar" %}</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'index' %}" class="text-gray-300 hover:text-primary transition-colors">{% trans "Bosh sahifa" %}</a></li>
+                        <li><a href="{% url 'about' %}" class="text-gray-300 hover:text-primary transition-colors">{% trans "Biz haqimizda" %}</a></li>
+                        <li><a href="{% url 'services' %}" class="text-gray-300 hover:text-primary transition-colors">{% trans "Xizmatlar" %}</a></li>
+                        <li><a href="{% url 'project' %}" class="text-gray-300 hover:text-primary transition-colors">{% trans "Loyihalar" %}</a></li>
+                        <li><a href="{% url 'blog' %}" class="text-gray-300 hover:text-primary transition-colors">{% trans "Blog" %}</a></li>
+                    </ul>
+                </div>
+                <div class="px-2">
+                    <h4 class="text-lg font-semibold mb-4">{% trans "Aloqa" %}</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#2B7FFF] mr-3 mt-1"></i>
+                            <span class="text-gray-300">{% trans "Navoi viloyati" %}</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-[#2B7FFF] mr-3 mt-1"></i>
+                            <span class="text-gray-300">+998 50 702 24 08</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-[#2B7FFF] mr-3 mt-1"></i>
+                            <span class="text-gray-300">info@auragroup.uz</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="px-2">
+                    <h4 class="text-lg font-semibold mb-4">{% trans "Yangiliklarga obuna bo'lish" %}</h4>
+                    <p class="text-gray-300 mb-4 w-[360px] md:w-[260px]">{% trans "Yangiliklar va takliflarimizdan xabardor bo'ling" %}</p>
+                    <form method="post" action="#">
+                        {% csrf_token %}
+                        <div class="flex w-[360px] md:w-[260px]">
+                            <input type="email" name="email" placeholder="{% trans 'Email manzilingiz' %}" class="px-4 py-2 w-full rounded-l-lg text-gray-800 focus:outline-none bg-[#020A18] border border-[#0097FF]"/>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-lg text-white">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-white">
+                <p>© 2025 Aura Group. {% trans "Barcha huquqlar himoyalangan." %}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+
+        function toggleDropdown(type) {
+            document.getElementById(`${type}-languageDropdown`).classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>

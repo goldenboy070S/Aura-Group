@@ -1,0 +1,65 @@
+{% load i18n %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{% trans "Xizmat so‘rovi" %}{% endblock %}
+
+{% block content %}
+<section class="py-12 px-4 text-white">
+    <h2 class="text-xl md:text-3xl font-bold mb-6 text-left xl:text-left px-4 xl:px-[140px]">
+        {% trans "Xizmat so‘rovi" %}
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-start justify-center gap-10">
+        <div class="w-full md:w-[320px] text-gray-300 flex items-start px-3 md:px-1 md:text-left">
+            <p>
+                {% trans "Quyidagi forma bilan kompaniyangiz, xizmat turi va loyiha haqida maʼlumot bering. Tez orada o'zimiz bog‘lanamiz." %}
+            </p>
+        </div>
+
+        <div class="border border-gray-700 w-full md:w-[840px] p-6 rounded-xl md:bg-gray-800 bg-transparent">
+            <form method="post" action="{% url 'services_request' %}">
+                {% csrf_token %}
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="bg-green-600 text-white p-4 rounded mb-4">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                {{ form.non_field_errors }}
+
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex flex-col w-full md:w-1/2">
+                        <label for="{{ form.Company_nomi.id_for_label }}" class="mb-1">{% trans "Kompaniya nomi" %}</label>
+                        {{ form.Company_nomi }}
+
+                        <label for="{{ form.name.id_for_label }}" class="mt-4 mb-1">{% trans "Ismingiz" %}</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="flex flex-col w-full md:w-1/2">
+                        <label for="{{ form.phone_number.id_for_label }}" class="mb-1">{% trans "Telefon raqam" %}</label>
+                        {{ form.phone_number }}
+
+                        <label for="{{ form.service_type.id_for_label }}" class="mt-4 mb-1">{% trans "Xizmat turi" %}</label>
+                        {{ form.service_type }}
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label for="{{ form.description.id_for_label }}" class="mb-1 block">{% trans "Loyiha tavsifi" %}</label>
+                    {{ form.description }}
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button type="submit" class="bg-[#1479C1] text-white font-bold py-2 px-6 rounded-lg flex items-center gap-2">
+                        {% trans "Yuborish" %} <span>🚀</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
