@@ -469,3 +469,31 @@ msgstr "Веб-сайт"
 #: .\templates\project.html:20
 msgid "Telegram bot"
 msgstr "Телеграм-бот"
+
+#: .\templates\project.html:21
+msgid "Web Development"
+msgstr "Веб-разработка"
+
+#: .\templates\project.html:22
+msgid "UI&UX"
+msgstr "UI и UX"
+
+#: .\templates\project.html:23
+msgid "Media production"
+msgstr "Медиа-продакшн"
+
+#: .\templates\project.html:24
+msgid "Branding"
+msgstr "Брендинг"
+
+#: .\templates\project.html:25
+msgid "Production of games"
+msgstr "Разработка игр"
+
+#: .\templates\project.html:26
+msgid "Artificial intelligence"
+msgstr "Искусственный интеллект"
+
+#: .\templates\project.html:27
+msgid "Cybersecurity"
+msgstr "Кибербезопасность"
