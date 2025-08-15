@@ -465,25 +465,5 @@ msgid "Web Development"
 msgstr "Web Development"
 
 #: .\templates\project.html:22
-msgid "UI&UX"
-msgstr "UI&UX"
-
-#: .\templates\project.html:23
-msgid "Media production"
-msgstr "Media production"
-
-#: .\templates\project.html:24
 msgid "Branding"
 msgstr "Branding"
-
-#: .\templates\project.html:25
-msgid "Production of games"
-msgstr "Production of games"
-
-#: .\templates\project.html:26
-msgid "Artificial intelligence"
-msgstr "Artificial intelligence"
-
-#: .\templates\project.html:27
-msgid "Cybersecurity"
-msgstr "Cybersecurity"

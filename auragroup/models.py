@@ -53,7 +53,9 @@ class Services(models.Model):
         ('mobile_app', 'Mobile app'),
         ('web_site', 'Web site'),
         ('crm', 'CRM'),
-        ('telegram_bot', 'Telegram bot')
+        ('telegram_bot', 'Telegram bot'),
+        ('web development', 'Web Development'),
+        ('branding', 'Branding'),
     ]
 
     name = models.CharField(max_length=50, choices=SERVICE_CHOICES)

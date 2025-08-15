@@ -472,26 +472,7 @@ msgstr "Telegram bot"
 msgid "Web Development"
 msgstr "Veb-dasturlash"
 
+
 #: .\templates\project.html:22
-msgid "UI&UX"
-msgstr "UI va UX"
-
-#: .\templates\project.html:23
-msgid "Media production"
-msgstr "Media ishlab chiqarish"
-
-#: .\templates\project.html:24
 msgid "Branding"
 msgstr "Brending"
-
-#: .\templates\project.html:25
-msgid "Production of games"
-msgstr "O‘yinlar ishlab chiqarish"
-
-#: .\templates\project.html:26
-msgid "Artificial intelligence"
-msgstr "Sun’iy intellekt"
-
-#: .\templates\project.html:27
-msgid "Cybersecurity"
-msgstr "Kiberxavfsizlik"
