@@ -467,3 +467,37 @@ msgstr "Web Development"
 #: .\templates\project.html:22
 msgid "Branding"
 msgstr "Branding"
+
+#: .\templates\404.html:6
+msgid "404 — Sahifa topilmadi"
+msgstr "404 — Page not found"
+
+#: .\templates\404.html:162
+msgid "Kechirasiz, izlayotgan sahifangiz topilmadi. Ehtimol manzil o‘zgargan yoki hech qachon mavjud bo‘lmagan."
+msgstr "Sorry, the page you are looking for could not be found. It may have been moved or never existed."
+
+#: .\templates\404.html:165
+#: .\templates\500.html:368
+msgid "Bosh sahifaga qaytish"
+msgstr "Return to Home"
+
+#: .\templates\404.html:167
+#: .\templates\500.html:369
+msgid "Oldingi sahifaga qaytish"
+msgstr "Go back to previous page"
+
+#: .\templates\404.html:272
+#: .\templates\500.html:483
+msgid "Kod — bitta <strong>index.html</strong> faylida. Ranglar va animatsiyalarni xohishingizga ko‘ra o‘zgartirish mumkin."
+msgstr "The code is in a single <strong>index.html</strong> file. You can customize colors and animations as you like."
+
+#: .\templates\500.html:7
+msgid "500 — Server xatosi"
+msgstr "500 — Server Error"
+
+#: .\templates\500.html:366
+msgid "Kechirasiz, serverda xatolik yuz berdi. Iltimos, keyinroq yana urinib ko‘ring."
+msgstr "Sorry, an error occurred on the server. Please try again later."
+
+
+

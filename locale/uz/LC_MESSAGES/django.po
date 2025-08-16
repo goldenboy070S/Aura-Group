@@ -472,7 +472,38 @@ msgstr "Telegram bot"
 msgid "Web Development"
 msgstr "Veb-dasturlash"
 
-
 #: .\templates\project.html:22
 msgid "Branding"
 msgstr "Brending"
+
+#: .\templates\404.html:6
+msgid "404 — Sahifa topilmadi"
+msgstr "404 — Sahifa topilmadi"
+
+#: .\templates\404.html:162
+msgid "Kechirasiz, izlayotgan sahifangiz topilmadi. Ehtimol manzil o‘zgargan yoki hech qachon mavjud bo‘lmagan."
+msgstr "Kechirasiz, izlayotgan sahifangiz topilmadi. Ehtimol manzil o‘zgargan yoki hech qachon mavjud bo‘lmagan."
+
+#: .\templates\404.html:165
+#: .\templates\500.html:368
+msgid "Bosh sahifaga qaytish"
+msgstr "Bosh sahifaga qaytish"
+
+#: .\templates\404.html:167
+#: .\templates\500.html:369
+msgid "Oldingi sahifaga qaytish"
+msgstr "Oldingi sahifaga qaytish"
+
+#: .\templates\404.html:272
+#: .\templates\500.html:483
+msgid "Kod — bitta <strong>index.html</strong> faylida. Ranglar va animatsiyalarni xohishingizga ko‘ra o‘zgartirish mumkin."
+msgstr "Kod — bitta <strong>index.html</strong> faylida. Ranglar va animatsiyalarni xohishingizga ko‘ra o‘zgartirish mumkin."
+
+#: .\templates\500.html:7
+msgid "500 — Server xatosi"
+msgstr "500 — Server xatosi"
+
+#: .\templates\500.html:366
+msgid "Kechirasiz, serverda xatolik yuz berdi. Iltimos, keyinroq yana urinib ko‘ring."
+msgstr "Kechirasiz, serverda xatolik yuz berdi. Iltimos, keyinroq yana urinib ko‘ring."
+

@@ -477,3 +477,34 @@ msgstr "Веб-разработка"
 #: .\templates\project.html:22
 msgid "Branding"
 msgstr "Брендинг"
+
+#: .\templates\404.html:6
+msgid "404 — Sahifa topilmadi"
+msgstr "404 — Страница не найдена"
+
+#: .\templates\404.html:162
+msgid "Kechirasiz, izlayotgan sahifangiz topilmadi. Ehtimol manzil o‘zgargan yoki hech qachon mavjud bo‘lmagan."
+msgstr "Извините, запрашиваемая страница не найдена. Возможно, адрес был изменён или никогда не существовал."
+
+#: .\templates\404.html:165
+#: .\templates\500.html:368
+msgid "Bosh sahifaga qaytish"
+msgstr "Вернуться на главную"
+
+#: .\templates\404.html:167
+#: .\templates\500.html:369
+msgid "Oldingi sahifaga qaytish"
+msgstr "Вернуться назад"
+
+#: .\templates\404.html:272
+#: .\templates\500.html:483
+msgid "Kod — bitta <strong>index.html</strong> faylida. Ranglar va animatsiyalarni xohishingizga ko‘ra o‘zgartirish mumkin."
+msgstr "Код — в одном файле <strong>index.html</strong>. Цвета и анимации можно изменить по вашему желанию."
+
+#: .\templates\500.html:7
+msgid "500 — Server xatosi"
+msgstr "500 — Ошибка сервера"
+
+#: .\templates\500.html:366
+msgid "Kechirasiz, serverda xatolik yuz berdi. Iltimos, keyinroq yana urinib ko‘ring."
+msgstr "Извините, на сервере произошла ошибка. Пожалуйста, попробуйте позже."
