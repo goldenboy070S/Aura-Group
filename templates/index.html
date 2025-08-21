@@ -94,7 +94,7 @@
     <div id="team-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
         {% for member in team_members %}
         <div class="bg-[#081331] rounded-xl text-left overflow-hidden p-4">
-            <img src="{{ member.image.url }}" alt="{% trans "Jamoa a'zosi" %}" class="w-[200px] h-[200px] object-cover rounded-lg transition-transform duration-300 hover:scale-105">
+            <img src="{{ member.image.url }}" alt="{% trans "Jamoa a'zosi" %}" class="w-[230px] h-[230px] object-cover rounded-lg transition-transform duration-300 hover:scale-105">
             <h3 class="mt-4 font-semibold text-xl">{{ member.name }}</h3>
             <p class="text-[#6ADAFC] text-sm">{{ member.position }}</p>
             <p class="text-sm mt-2 text-gray-300">{{ member.description }}</p>

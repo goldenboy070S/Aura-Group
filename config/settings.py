@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-9t*^^qi)nln5&uh@#ssxn70t_3zk3ob#0qq&4yhvc*3$owqa6w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://www.myaura.uz"]
 
 
 # Application definition

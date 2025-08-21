@@ -70,7 +70,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-[170px] mt-10 text-sm">
         {% for leader in management %}
         <div class="border border-[#081331] rounded-lg bg-[#081331] flex flex-col items-start">
-            <img src="{{ leader.image.url }}" alt="{{ leader.name }}" class="w-full md:w-[500px] h-64 object-cover">
+            <img src="{{ leader.image.url }}" alt="{{ leader.name }}" class="w-[270px] h-[290px] object-cover rounded-lg transition-transform duration-300 hover:scale-105">
             <h5 class="text-xl mt-3 px-4">{{ leader.name }}</h5>
             <p class="text-[#6ADAFC] mt-3 px-4">{{ leader.position }}</p>
             <p class="w-[300px] mt-3 px-4 py-3">{{ leader.description }}</p>
